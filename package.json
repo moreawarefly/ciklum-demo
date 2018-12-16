@@ -1,0 +1,49 @@
+{
+  "name": "ciklum-demo",
+  "version": "0.1.0",
+  "description": "Demo for Ciklum.",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint-eslint": "eslint components pages --ext .js,.jsx",
+    "lint": "npm run lint-eslint",
+    "deploy": "now --public && now alias && now rm $npm_package_now_name --safe --yes",
+    "jest": "jest --watch",
+    "test": "jest --coverage"
+  },
+  "now": {
+    "name": "ciklum-demo"
+  },
+  "dependencies": {
+    "next": "^7.0.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moreawarefly/ciklum-demo"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "boilerplate",
+    "now",
+    "eslint",
+    "editorconfig"
+  ],
+  "author": "Marcin Skawiński",
+  "license": "MIT"
+}
