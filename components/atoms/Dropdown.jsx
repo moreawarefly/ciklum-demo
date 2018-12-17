@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { prototype } from 'stream';
 
 const Label = styled.label`
 
@@ -10,11 +9,6 @@ const Label = styled.label`
 const Select = styled.select`
 
 `;
-
-function generatePairName(pair) {
-  // TODO return human-readable pair name
-  return pair;
-}
 
 function Dropdown({
   className,
@@ -27,14 +21,15 @@ function Dropdown({
       {!!label && `${label}: `}
       <Select
         onChange={onChangeHandler}
+        defaultValue={undefined}
       >
-        <option hidden disabled selected value> -- select -- </option>
+        <option value> -- select -- </option>
         {items.map(item => (
           <option
             key={item.key}
             value={item.value}
           >
-            {generatePairName(item.label)}
+            {(item.label)}
           </option>
         ))};
       </Select>
@@ -52,11 +47,11 @@ Dropdown.defaultProps = {
 Dropdown.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
-  items: PropTypes.arrayOf({
+  items: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,
     value: PropTypes.string,
     label: PropTypes.string,
-  }),
+  })),
   onChangeHandler: PropTypes.func,
 };
 

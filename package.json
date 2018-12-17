@@ -6,7 +6,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint-eslint": "eslint components pages --ext .js,.jsx",
+    "lint-eslint": "eslint components config pages services utils --ext .js,.jsx",
     "lint": "npm run lint-eslint",
     "deploy": "now --public && now alias && now rm $npm_package_now_name --safe --yes",
     "jest": "jest --watch",

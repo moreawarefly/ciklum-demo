@@ -4,6 +4,9 @@
   "plugins": [
       "react"
   ],
+  "globals": {
+    "fetch": false
+  },
   "parserOptions": {
     "ecmaVersion": 8,
     "ecmaFeatures": {
@@ -14,6 +17,7 @@
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/label-has-for": "off",
     "arrow-parens": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "consistent-return": "off"
   }
 }
