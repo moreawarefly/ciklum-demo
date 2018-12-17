@@ -12,6 +12,8 @@ const Input = styled.input`
 
 function TextInput({
   className,
+  required,
+  type,
   label,
   onChangeHandler,
 }) {
@@ -19,7 +21,8 @@ function TextInput({
     <Label className={className}>
       {!!label && `${label}: `}
       <Input
-        type="text"
+        required={required}
+        type={type}
         onChange={onChangeHandler}
       />
     </Label>
@@ -28,12 +31,16 @@ function TextInput({
 
 TextInput.defaultProps = {
   className: '',
+  required: false,
+  type: 'text',
   label: null,
   onChangeHandler: () => {},
 };
 
 TextInput.propTypes = {
   className: PropTypes.string,
+  required: PropTypes.bool,
+  type: PropTypes.string,
   label: PropTypes.string,
   onChangeHandler: PropTypes.func,
 };

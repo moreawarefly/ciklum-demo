@@ -12,6 +12,7 @@ const Select = styled.select`
 
 function Dropdown({
   className,
+  required,
   label,
   items,
   onChangeHandler,
@@ -20,10 +21,11 @@ function Dropdown({
     <Label className={className}>
       {!!label && `${label}: `}
       <Select
+        required={required}
         onChange={onChangeHandler}
         defaultValue={undefined}
       >
-        <option value> -- select -- </option>
+        <option value=""> -- select -- </option>
         {items.map(item => (
           <option
             key={item.key}
@@ -39,6 +41,7 @@ function Dropdown({
 
 Dropdown.defaultProps = {
   className: '',
+  required: false,
   label: null,
   items: [],
   onChangeHandler: () => {},
@@ -46,6 +49,7 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
   className: PropTypes.string,
+  required: PropTypes.bool,
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,

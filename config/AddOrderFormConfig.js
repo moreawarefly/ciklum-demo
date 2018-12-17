@@ -18,7 +18,7 @@ const sideDropdown = {
   ],
 };
 const orderTypeDropdown = {
-  label: 'Side',
+  label: 'Order type',
   name: 'orderType',
   items: [
     {
