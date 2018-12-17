@@ -11,16 +11,15 @@ const Input = styled.input`
 `;
 
 function TextInput({
+  className,
   label,
-  value,
   onChangeHandler,
 }) {
   return (
-    <Label>
+    <Label className={className}>
       {!!label && `${label}: `}
       <Input
         type="text"
-        value={value}
         onChange={onChangeHandler}
       />
     </Label>
@@ -28,14 +27,15 @@ function TextInput({
 }
 
 TextInput.defaultProps = {
+  className: '',
   label: null,
-  value: '',
+  onChangeHandler: () => {},
 };
 
 TextInput.propTypes = {
+  className: PropTypes.string,
   label: PropTypes.string,
-  value: PropTypes.string,
-  onChangeHandler: PropTypes.func.isRequired,
+  onChangeHandler: PropTypes.func,
 };
 
 export default TextInput;
