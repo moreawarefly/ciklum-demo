@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import TextInput from '../../atoms/TextInput';
 import Dropdown from '../../atoms/Dropdown';
+import SubmitInput from '../../atoms/SubmitInput';
 import * as formConfig from '../../../config/AddOrderFormConfig';
 import useCurrencyPairs from '../../../services/useCurrencyPairs';
 
@@ -22,11 +23,16 @@ function AddOrderForm() {
     return (event) => setStateFunction(event.target.value);
   }
 
+  function handleFormSubmit(event) {
+    console.log('form submit');
+    event.preventDefault();
+  }
+
   return (
     <div>
       {pairItems
         ? (
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <div>
               pair: {pair}
               side: {side}
@@ -65,6 +71,11 @@ function AddOrderForm() {
               <TextInput
                 label={formConfig.quantityInput.label}
                 onChangeHandler={createChangeHandler(setQuantity)}
+              />
+            </div>
+            <div>
+              <SubmitInput
+                label={formConfig.submitInput.label}
               />
             </div>
           </Form>

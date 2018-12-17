@@ -41,6 +41,9 @@ const quantityInput = {
   label: 'Quantity',
   name: 'quantity',
 };
+const submitInput = {
+  label: 'Save',
+};
 
 export {
   pairDropdown,
@@ -48,4 +51,5 @@ export {
   orderTypeDropdown,
   limitInput,
   quantityInput,
+  submitInput,
 };
