@@ -1,8 +1,8 @@
 import React from 'react';
-import AddOrderForm from '../components/pages/root/AddOrderForm';
+import Layout from '../components/pages/root/OrdersLayout';
 
-const Home = () => (
-  <AddOrderForm />
-);
+function Home() {
+  return <Layout />;
+}
 
 export default Home;
