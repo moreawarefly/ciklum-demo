@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TextInput from '../../atoms/TextInput';
 import Dropdown from '../../atoms/Dropdown';
@@ -11,7 +11,9 @@ const Form = styled.form`
 
 `;
 
-function AddOrderForm() {
+function AddOrderForm({
+  addOrderHandler,
+}) {
   const [pair, setPair] = useState();
   const [side, setSide] = useState();
   const [orderType, setOrderType] = useState();
@@ -24,7 +26,13 @@ function AddOrderForm() {
   }
 
   function handleFormSubmit(event) {
-    console.log('form submit');
+    addOrderHandler({
+      pair,
+      side,
+      orderType,
+      limit,
+      quantity,
+    });
     event.preventDefault();
   }
 
@@ -95,16 +103,8 @@ function AddOrderForm() {
   );
 }
 
-// AddOrderForm.defaultProps = {
-//   pairItems: [],
-// };
-
-// AddOrderForm.propTypes = {
-//   pairItems: PropTypes.arrayOf({
-//     key: PropTypes.string,
-//     value: PropTypes.string,
-//     label: PropTypes.string,
-//   }),
-// };
+AddOrderForm.propTypes = {
+  addOrderHandler: PropTypes.func.isRequired,
+};
 
 export default AddOrderForm;
