@@ -15,6 +15,26 @@ const SelectWrapper = styled.div`
   display: inline;
   margin-left: .5rem;
 
+  ${(props) => {
+    if (props.required) {
+      return `
+        overflow: hidden;
+
+        &:before {
+          content:"";
+          display: block;
+          position:absolute;
+          top: -5px;
+          right: -5px;
+          width: 10px;
+          height: 10px;
+          background-color: #85144b;
+          transform: rotate(45deg);
+        }
+      `;
+    }
+  }}
+
   &:after {
     content:"";
     width: 0;
@@ -51,7 +71,7 @@ function Dropdown({
   return (
     <Label className={className}>
       {!!label && `${label}: `}
-      <SelectWrapper>
+      <SelectWrapper required={required}>
         <Select
           required={required}
           onChange={onChangeHandler}

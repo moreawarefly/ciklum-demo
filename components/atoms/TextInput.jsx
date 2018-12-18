@@ -10,6 +10,29 @@ const Label = styled.label`
   align-items: center;
 `;
 
+const InputWrapper = styled.div`
+  ${(props) => {
+    if (props.required) {
+      return `
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+          content:"";
+          display: block;
+          position:absolute;
+          top: -5px;
+          right: -5px;
+          width: 10px;
+          height: 10px;
+          background-color: #85144b;
+          transform: rotate(45deg);
+        }
+      `;
+    }
+  }}
+`;
+
 const Input = styled.input`
   margin-left: .5rem;
   background-color: #eee;
@@ -31,11 +54,13 @@ function TextInput({
   return (
     <Label className={className}>
       {!!label && `${label}: `}
-      <Input
-        required={required}
-        type={type}
-        onChange={onChangeHandler}
-      />
+      <InputWrapper required={required}>
+        <Input
+          required={required}
+          type={type}
+          onChange={onChangeHandler}
+        />
+      </InputWrapper>
     </Label>
   );
 }
