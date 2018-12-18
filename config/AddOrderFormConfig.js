@@ -1,5 +1,6 @@
 const pairDropdown = {
   label: 'Pair',
+  name: 'pair',
 };
 const sideDropdown = {
   label: 'Side',
