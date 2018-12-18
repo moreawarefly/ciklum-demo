@@ -1,8 +1,8 @@
 import React from 'react';
-import Greeting from '../components/Greeting';
+import AddOrderForm from '../components/pages/root/AddOrderForm';
 
 const Home = () => (
-  <Greeting />
+  <AddOrderForm />
 );
 
 export default Home;
