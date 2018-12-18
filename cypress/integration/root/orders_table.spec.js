@@ -23,7 +23,7 @@ describe('Orders table', () => {
     cy.reload();
     cy.get('table').should('not.be.visible');
     cy.contains('No orders to be displayed.');
-    cy.get('form').find('select[name=pair]').select('btc <=> usd');
+    cy.get('form').find('select[name=pair]').select('BTC <=> USD');
     cy.get('form').find('select[name=side]').select('BUY');
     cy.get('form').find('select[name=orderType]').select('MARKET');
     cy.get('form').find('input[name=quantity]').type('1');
