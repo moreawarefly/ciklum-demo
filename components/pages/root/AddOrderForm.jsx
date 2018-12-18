@@ -1,28 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import {
+  ControlWrapper,
+  SubmitWrapper,
+  Header,
+} from './AddOrderForm.styles';
 import TextInput from '../../atoms/TextInput';
 import Dropdown from '../../atoms/Dropdown';
 import SubmitInput from '../../atoms/SubmitInput';
 import * as formConfig from '../../../config/AddOrderFormConfig';
 import useCurrencyPairs from '../../../services/useCurrencyPairs';
-
-const ControlWrapper = styled.div`
-  padding: .25rem 0;
-  border-top: 1px solid #eee;
-`;
-
-const SubmitWrapper = styled.div`
-  text-align: right;
-  padding: .25rem 0;
-  border-top: 1px solid #eee;
-`;
-
-const Header = styled.div`
-  font-weight: bold;
-  font-size: .9rem;
-  margin: .3rem 0;
-`;
 
 function AddOrderForm({
   addOrderHandler,
