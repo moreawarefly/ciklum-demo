@@ -32,6 +32,12 @@ const NoRecordsContainer = styled.div`
   text-align: center;
 `;
 
+const Header = styled.div`
+  font-weight: bold;
+  font-size: .9rem;
+  margin: .3rem 0;
+`;
+
 function OrdersTable({
   newOrder,
 }) {
@@ -48,28 +54,31 @@ function OrdersTable({
   }, [newOrder]);
 
   const ordersTableElement = (
-    <Table>
-      <thead>
-        <Thr>
-          <Th>Pair</Th>
-          <Th>Side</Th>
-          <Th>Type</Th>
-          <Th>Limit</Th>
-          <Th>Qty</Th>
-        </Thr>
-      </thead>
-      <tbody>
-        {orders.map((order, index) => (
-          <Tr key={index}>
-            <Td>{order.pair}</Td>
-            <Td>{order.side}</Td>
-            <Td>{order.orderType}</Td>
-            <Td>{order.limit}</Td>
-            <Td>{order.quantity}</Td>
-          </Tr>
-        ))}
-      </tbody>
-    </Table>
+    <div>
+      <Header>Saved orders</Header>
+      <Table>
+        <thead>
+          <Thr>
+            <Th>Pair</Th>
+            <Th>Side</Th>
+            <Th>Type</Th>
+            <Th>Limit</Th>
+            <Th>Qty</Th>
+          </Thr>
+        </thead>
+        <tbody>
+          {orders.map((order, index) => (
+            <Tr key={index}>
+              <Td>{order.pair}</Td>
+              <Td>{order.side}</Td>
+              <Td>{order.orderType}</Td>
+              <Td>{order.limit}</Td>
+              <Td>{order.quantity}</Td>
+            </Tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
   );
 
   const noRecordsElement = (
@@ -78,11 +87,7 @@ function OrdersTable({
     </NoRecordsContainer>
   );
 
-  return (
-    <div>
-      {(orders && orders.length) ? ordersTableElement : noRecordsElement}
-    </div>
-  );
+  return (orders && orders.length) ? ordersTableElement : noRecordsElement;
 }
 
 OrdersTable.defaultProps = {
