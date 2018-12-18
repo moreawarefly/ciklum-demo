@@ -10,6 +10,7 @@ import {
   Header,
 } from './OrdersTable.styles';
 import { getOrders } from '../../../services/ordersStorageApi';
+import decorateCurrencyPairName from '../../../utils/decorateCurrencyPairName';
 
 function OrdersTable({
   newOrder,
@@ -42,10 +43,10 @@ function OrdersTable({
         <tbody>
           {orders.map((order, index) => (
             <Tr key={index}>
-              <Td>{order.pair}</Td>
+              <Td>{decorateCurrencyPairName(order.pair)}</Td>
               <Td>{order.side}</Td>
               <Td>{order.orderType}</Td>
-              <Td>{order.limit}</Td>
+              <Td>{order.limit || '-'}</Td>
               <Td>{order.quantity}</Td>
             </Tr>
           ))}
