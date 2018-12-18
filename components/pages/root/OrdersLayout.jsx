@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import {
+  Main,
+  FormWrapper,
+  OrdersWrapper,
+} from './OrdersLayout.styles';
 import AddOrderForm from './AddOrderForm';
 import OrdersTable from './OrdersTable';
 import { addOrder } from '../../../services/ordersStorageApi';
@@ -12,14 +17,18 @@ function OrdersLayout() {
   }
 
   return (
-    <main>
-      <AddOrderForm
-        addOrderHandler={addOrderHandler}
-      />
-      <OrdersTable
-        newOrder={newOrder}
-      />
-    </main>
+    <Main>
+      <FormWrapper>
+        <AddOrderForm
+          addOrderHandler={addOrderHandler}
+        />
+      </FormWrapper>
+      <OrdersWrapper>
+        <OrdersTable
+          newOrder={newOrder}
+        />
+      </OrdersWrapper>
+    </Main>
   );
 }
 

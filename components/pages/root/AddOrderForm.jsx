@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import {
+  ControlWrapper,
+  SubmitWrapper,
+  Header,
+} from './AddOrderForm.styles';
 import TextInput from '../../atoms/TextInput';
 import Dropdown from '../../atoms/Dropdown';
 import SubmitInput from '../../atoms/SubmitInput';
 import * as formConfig from '../../../config/AddOrderFormConfig';
 import useCurrencyPairs from '../../../services/useCurrencyPairs';
-
-const Form = styled.form`
-
-`;
 
 function AddOrderForm({
   addOrderHandler,
@@ -36,71 +36,60 @@ function AddOrderForm({
     event.preventDefault();
   }
 
-  return (
+  const formElement = (
     <div>
-      {pairItems
-        ? (
-          <Form onSubmit={handleFormSubmit}>
-            <div>
-              pair: {pair}
-              side: {side}
-              orderType: {orderType}
-              limit: {limit}
-              quantity: {quantity}
-            </div>
-            <div>
-              <Dropdown
-                required
-                label={formConfig.pairDropdown.label}
-                items={pairItems}
-                onChangeHandler={createChangeHandler(setPair)}
-              />
-            </div>
-            <div>
-              <Dropdown
-                required
-                label={formConfig.sideDropdown.label}
-                items={formConfig.sideDropdown.items}
-                onChangeHandler={createChangeHandler(setSide)}
-              />
-            </div>
-            <div>
-              <Dropdown
-                required
-                label={formConfig.orderTypeDropdown.label}
-                items={formConfig.orderTypeDropdown.items}
-                onChangeHandler={createChangeHandler(setOrderType)}
-              />
-            </div>
-            <div>
-              <TextInput
-                required={orderType === 'limit'}
-                type="number"
-                label={formConfig.limitInput.label}
-                onChangeHandler={createChangeHandler(setLimit)}
-              />
-            </div>
-            <div>
-              <TextInput
-                required
-                type="number"
-                label={formConfig.quantityInput.label}
-                onChangeHandler={createChangeHandler(setQuantity)}
-              />
-            </div>
-            <div>
-              <SubmitInput
-                label={formConfig.submitInput.label}
-              />
-            </div>
-          </Form>
-        )
-        : (
-          <div>Loading</div>
-        )
-      }
+      <Header>Add order</Header>
+      <form onSubmit={handleFormSubmit}>
+        <ControlWrapper>
+          <Dropdown
+            required
+            label={formConfig.pairDropdown.label}
+            items={pairItems}
+            onChangeHandler={createChangeHandler(setPair)}
+          />
+        </ControlWrapper>
+        <ControlWrapper>
+          <Dropdown
+            required
+            label={formConfig.sideDropdown.label}
+            items={formConfig.sideDropdown.items}
+            onChangeHandler={createChangeHandler(setSide)}
+          />
+        </ControlWrapper>
+        <ControlWrapper>
+          <Dropdown
+            required
+            label={formConfig.orderTypeDropdown.label}
+            items={formConfig.orderTypeDropdown.items}
+            onChangeHandler={createChangeHandler(setOrderType)}
+          />
+        </ControlWrapper>
+        <ControlWrapper>
+          <TextInput
+            required={orderType === 'limit'}
+            type="number"
+            label={formConfig.limitInput.label}
+            onChangeHandler={createChangeHandler(setLimit)}
+          />
+        </ControlWrapper>
+        <ControlWrapper>
+          <TextInput
+            required
+            type="number"
+            label={formConfig.quantityInput.label}
+            onChangeHandler={createChangeHandler(setQuantity)}
+          />
+        </ControlWrapper>
+        <SubmitWrapper>
+          <SubmitInput
+            label={formConfig.submitInput.label}
+          />
+        </SubmitWrapper>
+      </form>
     </div>
   );
+
+  return pairItems ? formElement : (<div>Loading</div>); // TODO add fancy loader
 }
 
 AddOrderForm.propTypes = {
