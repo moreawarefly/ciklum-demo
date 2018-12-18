@@ -43,6 +43,7 @@ function AddOrderForm({
         <ControlWrapper>
           <Dropdown
             required
+            name={formConfig.pairDropdown.name}
             label={formConfig.pairDropdown.label}
             items={pairItems}
             onChangeHandler={createChangeHandler(setPair)}
@@ -51,6 +52,7 @@ function AddOrderForm({
         <ControlWrapper>
           <Dropdown
             required
+            name={formConfig.sideDropdown.name}
             label={formConfig.sideDropdown.label}
             items={formConfig.sideDropdown.items}
             onChangeHandler={createChangeHandler(setSide)}
@@ -59,6 +61,7 @@ function AddOrderForm({
         <ControlWrapper>
           <Dropdown
             required
+            name={formConfig.orderTypeDropdown.name}
             label={formConfig.orderTypeDropdown.label}
             items={formConfig.orderTypeDropdown.items}
             onChangeHandler={createChangeHandler(setOrderType)}
@@ -68,6 +71,7 @@ function AddOrderForm({
           <TextInput
             required={orderType === 'limit'}
             type="number"
+            name={formConfig.limitInput.name}
             label={formConfig.limitInput.label}
             onChangeHandler={createChangeHandler(setLimit)}
           />
@@ -76,6 +80,7 @@ function AddOrderForm({
           <TextInput
             required
             type="number"
+            name={formConfig.quantityInput.name}
             label={formConfig.quantityInput.label}
             onChangeHandler={createChangeHandler(setQuantity)}
           />

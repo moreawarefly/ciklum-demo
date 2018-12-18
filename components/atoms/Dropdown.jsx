@@ -63,6 +63,7 @@ const Select = styled.select`
 
 function Dropdown({
   className,
+  name,
   required,
   label,
   items,
@@ -73,6 +74,7 @@ function Dropdown({
       {!!label && `${label}: `}
       <SelectWrapper required={required}>
         <Select
+          name={name}
           required={required}
           onChange={onChangeHandler}
           defaultValue={undefined}
@@ -94,6 +96,7 @@ function Dropdown({
 
 Dropdown.defaultProps = {
   className: '',
+  name: '',
   required: false,
   label: null,
   items: [],
@@ -102,6 +105,7 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
   className: PropTypes.string,
+  name: PropTypes.string,
   required: PropTypes.bool,
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({

@@ -46,6 +46,7 @@ const Input = styled.input`
 
 function TextInput({
   className,
+  name,
   required,
   type,
   label,
@@ -56,6 +57,7 @@ function TextInput({
       {!!label && `${label}: `}
       <InputWrapper required={required}>
         <Input
+          name={name}
           required={required}
           type={type}
           onChange={onChangeHandler}
@@ -67,6 +69,7 @@ function TextInput({
 
 TextInput.defaultProps = {
   className: '',
+  name: '',
   required: false,
   type: 'text',
   label: null,
@@ -75,6 +78,7 @@ TextInput.defaultProps = {
 
 TextInput.propTypes = {
   className: PropTypes.string,
+  name: PropTypes.string,
   required: PropTypes.bool,
   type: PropTypes.string,
   label: PropTypes.string,
