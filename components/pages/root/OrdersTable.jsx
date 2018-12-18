@@ -30,6 +30,7 @@ const Td = styled.td`
 
 const NoRecordsContainer = styled.div`
   text-align: center;
+  padding-top: 2rem;
 `;
 
 const Header = styled.div`

@@ -15,8 +15,10 @@ const Input = styled.input`
   background-color: #eee;
   border: none;
   border-radius: 3px;
-  padding: .5rem 35px .5rem .5rem;
+  padding: .5rem;
   font-size: 1rem;
+  box-sizing: border-box;
+  width: 150px;
 `;
 
 function TextInput({

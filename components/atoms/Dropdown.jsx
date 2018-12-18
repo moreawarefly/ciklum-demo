@@ -37,6 +37,8 @@ const Select = styled.select`
   border-radius: 3px;
   padding: .5rem 35px .5rem .5rem;
   font-size: 1rem;
+  box-sizing: border-box;
+  width: 150px;
 `;
 
 function Dropdown({
