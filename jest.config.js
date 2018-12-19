@@ -22,8 +22,9 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "pages/**/*.jsx",
-    "components/**/*.jsx"
+    "components/**/*.jsx",
+    "services/**/*.js",
+    "utils/**/*.js",
   ],
 
   // The directory where Jest should output its coverage files
@@ -118,7 +119,10 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: [
+    "jest-localstorage-mock",
+    "./tests/setupJest.js"
+  ],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
   // setupTestFrameworkScriptFile: null,
