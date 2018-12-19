@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`OrdersLayout renders correctly 1`] = `
 <div
   className="OrdersLayoutstyles__Main-sc-3st4fd-0 dzBGOA"
 >
