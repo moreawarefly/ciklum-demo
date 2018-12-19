@@ -20,7 +20,7 @@ class SSREnabledDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           {this.props.styleTags}
         </Head>
-        <body>
+        <body style={{ fontFamily: 'sans-serif' }}>
           <Main />
           <NextScript />
         </body>
