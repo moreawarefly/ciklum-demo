@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown renders correctly w/o arguments 1`] = `
+<label
+  className="TextInput__Label-wh9sup-0 bszEGB"
+>
+  <div
+    className="TextInput__InputWrapper-wh9sup-1 kMtFrB"
+    required={false}
+  >
+    <input
+      className="TextInput__Input-wh9sup-2 fYtAcX"
+      name=""
+      onChange={[Function]}
+      required={false}
+      type="text"
+    />
+  </div>
+</label>
+`;
+
+exports[`Dropdown renders correctly with provided all attributes 1`] = `
+<label
+  className="TextInput__Label-wh9sup-0 bszEGB"
+>
+  mockLabel: 
+  <div
+    className="TextInput__InputWrapper-wh9sup-1 cDbVNq"
+    required={true}
+  >
+    <input
+      className="TextInput__Input-wh9sup-2 fYtAcX"
+      name="mockName"
+      onChange={[Function]}
+      required={true}
+      type="number"
+    />
+  </div>
+</label>
+`;

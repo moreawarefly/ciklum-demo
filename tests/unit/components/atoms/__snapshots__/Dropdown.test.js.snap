@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown renders correctly w/o arguments 1`] = `
+<label
+  className="Dropdown__Label-sc-18glqnp-0 eUXFKX"
+>
+  <div
+    className="Dropdown__SelectWrapper-sc-18glqnp-1 dymhwW"
+    required={false}
+  >
+    <select
+      className="Dropdown__Select-sc-18glqnp-2 jRkxKY"
+      name=""
+      onChange={[Function]}
+      required={false}
+    >
+      <option
+        value=""
+      >
+         -- select -- 
+      </option>
+      ;
+    </select>
+  </div>
+</label>
+`;
+
+exports[`Dropdown renders correctly with provided all attributes 1`] = `
+<label
+  className="Dropdown__Label-sc-18glqnp-0 eUXFKX"
+>
+  mockLabel: 
+  <div
+    className="Dropdown__SelectWrapper-sc-18glqnp-1 loaLWB"
+    required={true}
+  >
+    <select
+      className="Dropdown__Select-sc-18glqnp-2 jRkxKY"
+      name="mockName"
+      onChange={[Function]}
+      required={true}
+    >
+      <option
+        value=""
+      >
+         -- select -- 
+      </option>
+      <option
+        value="value1"
+      >
+        label1
+      </option>
+      <option
+        value="value2"
+      >
+        label2
+      </option>
+      ;
+    </select>
+  </div>
+</label>
+`;
