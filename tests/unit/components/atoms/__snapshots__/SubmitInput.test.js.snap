@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown renders correctly w/o arguments 1`] = `
+<input
+  className="SubmitInput__Input-sc-54xcdz-0 hiVFUM"
+  type="submit"
+  value=""
+/>
+`;
+
+exports[`Dropdown renders correctly with provided all attributes 1`] = `
+<input
+  className="SubmitInput__Input-sc-54xcdz-0 hiVFUM"
+  type="submit"
+  value="mockLabel"
+/>
+`;
