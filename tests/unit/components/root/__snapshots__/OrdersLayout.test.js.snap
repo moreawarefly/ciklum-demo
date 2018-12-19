@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="OrdersLayoutstyles__Main-sc-3st4fd-0 dzBGOA"
+>
+  <div
+    className="OrdersLayoutstyles__FormWrapper-sc-3st4fd-1 csUZIe"
+  >
+    <div>
+      Loading
+    </div>
+  </div>
+  <div
+    className="OrdersLayoutstyles__OrdersWrapper-sc-3st4fd-2 cixaoq"
+  >
+    <div
+      className="OrdersTablestyles__NoRecordsContainer-sc-1758ceg-5 jJqdFU"
+    >
+      No orders to be displayed.
+    </div>
+  </div>
+</div>
+`;
